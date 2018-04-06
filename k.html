@@ -229,8 +229,6 @@
       } else {
         topNavBar.classList.remove('sticky')
       }
-      console.log('window.scrollY')
-      console.log(window.scrollY)
       let specialTags = document.querySelectorAll('[data-x]');
       let minIndex = 0;
       for(let i=1; i<specialTags.length; i++){
@@ -238,18 +236,14 @@
           minIndex = i
           }
       }
-      for(let i=0; i<specialTags.length; i++){
-        specialTags[i].classList.remove('active')
-      }
-      specialTags[minIndex].classList.add('active')
       let id = specialTags[minIndex].id;
       let a = document.querySelector('a[href="#' + id + '"]'); //根据元素id获取a标签
       let li = a.parentNode;
       let brothersAndMe = li.parentNode.children;
       for(let i=0; i<brothersAndMe.length; i++){
-        brothersAndMe[i].classList.remove('active')
+        brothersAndMe[i].classList.remove('highlight')
       }
-      li.classList.add('active')
+      li.classList.add('highlight')
     }
     
     let liTags = document.querySelectorAll('nav.menu>ul>li')
